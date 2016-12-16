@@ -5,7 +5,7 @@ node('android') {
     stage 'Checkout'
     checkout scm
 
-    stage 'Build'{
+    stage ('Build'){
          def proc = ["/bin/sh", "-c", "cat /etc/passwd"].execute()
          proc.waitFor()
          println "stdout: ${proc.in.text}"
